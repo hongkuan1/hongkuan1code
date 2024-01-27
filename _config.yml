@@ -1,6 +1,5 @@
 # Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
-# Source: https://github.com/hk2012/hongkuan.github.io.git
 
 # Site
 title: 流年印记
@@ -13,7 +12,7 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://hongkuan.github.io/
+url: https://hongkuan1.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -116,11 +115,9 @@ theme: shoka
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  # repo: https://github.com/hk2012/hk2012.github.io.git
-
-  repo: git@github.com:hk2012/hongkuan.github.io.git
-  
+  repo: git@github.com:hongkuan1/hongkuan1.github.io.git
   branch: master
+  
 vendors:
   css:
     # 略略略
@@ -230,7 +227,6 @@ live2d:
     enable: true
     text:
       - 汉室衰微，朝纲霍乱
-      - 你在狗叫什么
 
 baidu_url_submit: 
   count: 100 ## 比如100，代表提交最新的一百个链接 

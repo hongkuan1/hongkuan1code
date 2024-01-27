@@ -17,7 +17,7 @@
 {% links %}	
 - site: 流年印记
   owner: 洪宽
-  url: https://hk2012.github.io/
+  url: https://hk2012.github.io/hongkuan.github.io/
   desc: 一个逆流而上的修行者
   image: images/avatar.jpg
   color: "#e9546b"
