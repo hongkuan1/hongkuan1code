@@ -46,6 +46,15 @@ date: 2023-11-26 17:09:00
     - 优点： 精度高、对异常值不敏感、无数据输入假定
     - 缺点：计算复杂度高，空间复杂度高
     - 使用数据范围：数值型和标称型
+
+- k-近邻算法的一般流程
+    - 收集数据：可以使用任何方法
+    - 准备数据：距离计算所需要的数值，最好是结构化的数据格式
+    - 分析数据：可以使用任何方法
+    - 训练算法：此步骤不适用于 k-近邻算法
+    - 测试算法：计算错误率
+    - 使用算法：首先需要输入样本数据和结构化的输出结果，然后运行 k-近邻算法 判定输入数据分别属于那个分类，最后应用对计算出的分类执行后续的处理
+
 - 工作原理
     - 存在一个样本数据集合，也称作训练样本集，并且样本集中每个数据都存在标签，即我们知道样本集中每一数据与所属分类的对应关系。输入没有标签的新数据后，将新数据的每个特征与样本集中数据对应的特征进行比较，然后算法提取样本集中特征最相似数据（最近邻）的分类标签。
     - 一般来说，我们只选择样本数据集中前 K 个最相似的数据，这就是 K-近邻算法中 K 的出处，通常 K 是不大于20的整数。最后，选择 K 个最相似数据中出现次数最多的分类，作为新数据的分类。
@@ -70,39 +79,71 @@ date: 2023-11-26 17:09:00
     ```
     4. 结果输出
     ![knn1](/img/software/knn1.png)
-    5. ```python 
-        import matplotlib
-        import numpy as np
-        # TkAgg: 使用 Tkinter 作为用户界面工具包的后端
-        matplotlib.use('TkAgg')
-        import matplotlib.pyplot as plt
+    5. 使用第二模块 matplotlib 绘图库
+    ```python
+    import matplotlib
+    import numpy as np
+    # TkAgg: 使用 Tkinter 作为用户界面工具包的后端
+    matplotlib.use('TkAgg')
+    import matplotlib.pyplot as plt
 
+
+    # 数据
+    def createDataSet():
 
         # 数据
-        def createDataSet():
+        group = np.array([[1.0, 1.1], [1.0, 1.0], [0, 0], [0, 0.1]])
+        label = np.array(['A', 'A', 'B', 'B'])
 
-            # 数据
-            group = np.array([[1.0, 1.1], [1.0, 1.0], [0, 0], [0, 0.1]])
-            label = np.array(['A', 'A', 'B', 'B'])
+        # 绘制散点图
+        plt.scatter(group[label == 'A', 0], group[label == 'A', 1], marker='o', label='Class A')
+        plt.scatter(group[label == 'B', 0], group[label == 'B', 1], marker='x', label='Class B')
 
-            # 绘制散点图
-            plt.scatter(group[label == 'A', 0], group[label == 'A', 1], marker='o', label='Class A')
-            plt.scatter(group[label == 'B', 0], group[label == 'B', 1], marker='x', label='Class B')
+        # 添加标题和标签
+        plt.title('Scatter Plot of Classes A and B')
+        plt.xlabel('Feature 1')
+        plt.ylabel('Feature 2')
 
-            # 添加标题和标签
-            plt.title('Scatter Plot of Classes A and B')
-            plt.xlabel('Feature 1')
-            plt.ylabel('Feature 2')
+        # 添加图例
+        plt.legend()
 
-            # 添加图例
-            plt.legend()
-
-            # 显示图表
-            plt.show()
+        # 显示图表
+        plt.show()
 
 
-        if __name__ == '__main__':
-            createDataSet()
-        ```
+    if __name__ == '__main__':
+        createDataSet()
+    ```
+    6. 结果输出
+    ![knn1](/img/software/knn_2.png)
 
 ## 决策树
+
+- 形式
+    - 矩形代表判断模块 (decision block)
+    - 椭圆形代表终止模块 (terminating block)
+- 概述
+    - 类似于二十个问题的游戏，游戏规则：参与游戏的一方在脑海中想某个事物，其他参与者向他提问题，只允许提20个问题，问题的答案也只能用 [对]{.green} 和 [错]{.red} 回答。
+    - 优点：计算复杂度不高，输出结果易于理解，对中间值的缺失不敏感，可以处理不相关特征数据
+    - 缺点：可能会产生过度匹配问题
+    - 适用数据类型：数值型和标称型
+
+- 决策树的一般流程
+    - 收集数据：可以使用任何方法
+    - 准备数据：树构造算法只适用于标称型数据，因此
+    - 分析数据：可以使用任何方法，构造树完成之后，我们应该检查图形是否符合预期。
+    - 训练算法：构造树的数据结构
+    - 测试算法：使用经验树计算错误率
+    - 使用算法：此步骤可以适用于任何监督学习算法，而使用决策树可以更好地理解数据的内在含义。
+
+- 
+
+## 朴素贝叶斯
+
+- 基于概率论的分类方法
+
+- 概述
+
+    - 优点：在数据较少的情况下仍然有效，可以处理多类别问题
+    - 缺点：对于输入数据的准备方式较为敏感
+    - 适用数据类型：标称型数据
