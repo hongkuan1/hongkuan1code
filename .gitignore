@@ -1,2 +1,8 @@
-# 忽略 node_modules 目录
+.DS_Store
+Thumbs.db
+db.json
+db*.json
+*.log
 node_modules/
+.deploy_git/
+temp_*
