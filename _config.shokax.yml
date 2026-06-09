@@ -1,0 +1,256 @@
+alternate: Yume Shoka # 站点大标题
+
+statics: "/" # 静态文件根目录
+assets: "assets"
+css: "css"
+js: "js"
+
+open_graph:
+#twitter_id:
+#google_plus:
+#fb_admins:
+#fb_app_id:
+
+grayMode: false # 全站黑白滤镜
+
+# 请注意: 本主题的PWA功能只是一个装载器,需要自备js和manifest
+pwa:
+  enable: false # 开启PWA功能
+  serviceworker: sw.js #serviceworker脚本位置,使用以/为基准的绝对路径
+  manifest: manifest.json #manifest位置,使用以/为基准的绝对路径
+
+# 实验性特性
+experiments:
+  mobileWidth: 820px # 移动版和桌面版导航栏最短切换长度
+  copyrightLength: 50 # 自定义复制时显示copyright的长度
+  antiFakeWebsite: true # 防止恶意网站伪装
+
+homeConfig:
+  gradient: false # 使用CSS渐变作为文章封面
+  # fixedCover 性能比默认的更好，且开启时将启用LCP优化 and 预加载
+  fixedCover: "" # 主页面cover(为空则使用bing随机图片)
+  coverConfig:
+    enableCover: true # 是否开启头图
+    enablePreload: true #是否开启预加载头图
+    enableNextGradientCover: false # 使用CSS渐变作为上/下一页封面
+  cateCards:
+    - slug: # 分类 slug
+      cover: # 分类封面
+
+# ShokaX 模块化分包引入设置
+# 请关闭所有不使用的模块以优化主题 js 体积和性能
+modules:
+  debug: false # 启用调试模式
+  player: true # 启用音乐播放器
+  fireworks: true # 启用鼠标点击烟花特效
+  visibilityListener: true # 启用可见度监听器，当你不需要页面标题随标签页切换而变化可关闭
+  tabs: true # 启用选项卡扩展支持，如需开启 summary 功能请一并开启
+  quiz: true # 启用文章内问题扩展支持
+  cloudflarePatch: false
+
+# 优化性能区
+performance:
+  # 使用preconnect预加载的网址(不建议超过三个)
+  preConnect:
+    - "https://s4.zstatic.net"
+    - "https://at.alicdn.com"
+  # 使用dns-prefetch预解析的网址
+  dnsPrefetch:
+
+playerAPI: "https://api.injahow.cn" # 结尾不带/,只填写域名
+
+icon:
+  favicon: "/favicon.ico"
+  apple_touch_icon: "/apple-touch-icon.png"
+
+seo:
+  bing:
+  google:
+  yandex:
+  baidu:
+
+visitor:
+  clarity: false
+  baiduAnalytics: false
+  googleAnalytics: false
+
+darkmode: false
+auto_dark: # 自动亮/暗模式
+  enable: true #是否开启
+  start: 20 #开始时间
+  end: 7 #结束时间
+
+auto_scroll: true
+
+loader:
+  start: true # 进入页面时显示加载动画
+  switch: true # 切换页面时显示加载动画
+
+# 显示的动画(烟花)
+# 参阅 https://github.com/D-Sketon/mouse-firework
+fireworks:
+  enable: true
+  options:
+    excludeElements: ["a"]
+    particles:
+      - shape: circle
+        move: ["emit"]
+        easing: easeOutExpo
+        colors:
+          - "rgba(255,182,185,.9)"
+          - "rgba(250,227,217,.9)"
+          - "rgba(187,222,214,.9)"
+          - "rgba(138,198,209,.9)"
+        number: 30
+        duration: [1200, 1800]
+        shapeOptions:
+          radius: [16, 32]
+      - shape: circle
+        move: ["diffuse"]
+        easing: easeOutExpo
+        colors: ["#fff"]
+        number: 1
+        duration: [1200, 1800]
+        shapeOptions:
+          radius: 20
+          alpha: 0.5
+          lineWidth: 6
+
+font:
+  enable: true
+  # 从google字体库加载,如果自定义@font-face请关闭
+  loadFromGoogle: true
+  # 适用于所有在body标签内的文字.
+  global:
+    external: true
+    family: Mulish
+    size:
+  # 大标题字体.
+  logo:
+    external: true
+    family: Fredericka the Great
+    size: 3.5
+  # 页面标题字体.
+  title:
+    external: true
+    family: Noto Serif JP
+    size: 2.5
+  # 标题字体.
+  headings:
+    external: true
+    family: Noto Serif SC
+    size:
+  # 文章字体.
+  posts:
+    external: false
+    family:
+  # 代码块的字体
+  codes:
+    external: true
+    family: Inconsolata
+
+iconfont: "4415496_59g1326wajd"
+
+menu:
+  home: / || home
+  about: /about/own/ || user
+
+# https://twikoo.js.org
+twikoo:
+  enable: false
+  mode: vercel
+  envId: "https://example.com"
+  region:
+
+# https://waline.js.org/
+waline:
+  enable: false
+  serverURL: ""
+  lang: "zh-CN"
+  locale: {}
+  emoji:
+  meta:
+    - nick
+    - mail
+    - link
+  requiredMeta:
+    - nick
+    - mail
+  wordLimit: 0
+  pageSize: 10
+  pageview: false
+  recaptchaV3Key:
+  turnstileKey:
+
+summary:
+  enable: false
+  introduce: ""
+  model:
+  apiKey:
+  apiUrl:
+  temperature:
+  initalPrompt:
+  concurrency: 5
+
+pagefind:
+  enable: false
+
+# Social Links
+social:
+  # github: https://github.com/yourname || github || "#191717"
+
+sidebar:
+  position: left
+  avatar: avatar-manga-self.jpg
+
+widgets:
+  random_posts: true
+  recent_comments: true
+
+footer:
+  since: 2010
+  icon:
+    name: sakura rotate
+    color: "#ffc0cb"
+  count: false
+  powered: true
+  icp:
+    enable: false
+    icon: ""
+    icpnumber: "xxx"
+    beian: "xxx"
+    recordcode: "xxx"
+
+post:
+  count: false
+
+outime:
+  enable: false
+  days: 90
+
+reward:
+  enable: true
+  account:
+    wechatpay: /wechatpay.png
+    alipay: /alipay.png
+    paypal: /paypal.png
+
+tagcloud:
+  min: 16
+  max: 22
+  start: "#72cecf"
+  end: "#ffbac3"
+  amount: 200
+
+creative_commons:
+  license: by-nc-sa
+  language: deed.zh
+
+audio:
+
+search:
+  hits:
+    per_page: 10
+
+# 随机背景图/封面图 API（替换失效的新浪图床，解决 403 问题）
+image_server: https://www.dmoe.cc/random.php

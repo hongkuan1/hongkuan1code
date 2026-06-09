@@ -57,6 +57,8 @@ prismjs:
   line_number: true
   tab_replace: ''
 
+syntax_highlighter: false
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -109,13 +111,13 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 # theme: land
-theme: shoka
+theme: shokax
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:hongkuan1/hongkuan1.github.io.git
+  repo: https://github.com/hongkuan1/hongkuan1.github.io.git
   branch: master
   
 vendors:
